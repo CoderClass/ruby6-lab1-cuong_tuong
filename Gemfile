@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -52,6 +52,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
-source 'https://rails-assets.org' do
+source 'http://insecure.rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
