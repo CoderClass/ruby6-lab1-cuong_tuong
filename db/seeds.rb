@@ -6,7 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+if Photo.count == 0
+	10.times do 
+	    Photo.create username: Faker::Name.name, caption: Faker::Company.name, url: Faker::Avatar.image, likes_count: Faker::Number.between(1,100)
+	end
+end
 
-10.times do 
-    Photo.create username: Faker::Name.name, caption: Faker::Company.name, url: Faker::Avatar.image, likes_count: Faker::Number.between(1,100)
+
+Photo.all.each do |photo|
+	rand(5).times do
+		photo.comments.create! username: Faker::Internet.user_name, body: Faker::Hipster.sentence
+	end
 end
