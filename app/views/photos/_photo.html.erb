@@ -5,7 +5,11 @@
     <h4 class="card-title"><%= photo.username %></h4>
     <p class="card-text"><%= photo.caption %></p>
     <p class="card-text"><%= photo.likes_count %></p>
-
     <a href="<%= photo.url %>" class="btn btn-primary">Go somewhere</a>
+    <div class="card-footer">
+			<% photo.comments.each do |comment| %>
+				<p><strong><%= comment.username %>:</strong><%= comment.body %></p>
+			<% end %>
+		</div>	
   </div>
 </div>
